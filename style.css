@@ -22,3 +22,7 @@ body{
     padding: 0px;
     margin-left: -1px;
 }
+
+.hoveredOver{
+    box-shadow: 3px 3px 10px black;
+}
