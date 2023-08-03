@@ -3,9 +3,13 @@ let height = 15;
 let horizontalGridNum = 16;
 let verticalGridNum = 16;
 const container = document.querySelector(".container");
+const randomise = document.querySelector(".randomise");
+let mode = "black";
 
-function hover(div){
-    div.classList.toggle("hoveredOver");
+function getRandomColor(){
+    let color = `rgb(${Math.random * 255}, ${Math.random * 255}, ${Math.random * 255})`;
+    console.log(color);
+    return `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})`
 }
 
 function makeGrid(width, height, horizontalGridNum, verticalGridNum){
@@ -17,11 +21,16 @@ function makeGrid(width, height, horizontalGridNum, verticalGridNum){
                                                   div.style.zIndex = 1;});
         div.addEventListener("mouseleave", () => {div.classList.toggle("hoveredOver")
                                                   div.style.zIndex = 0;});
-        div.classList.add("clicked");
+        div.addEventListener("click", () => {div.style.backgroundColor = mode == "black" ? "black" : getRandomColor()});
         div.classList.toggle("hoveredOver");
-        div.classList.toggle("clicked");
         container.appendChild(div);
     }
 }
 
 makeGrid(width, height, horizontalGridNum, verticalGridNum);
+randomise.onclick = () => {if(mode != "random")
+                           {mode = "random";
+                            randomise.classList.toggle("clicked");}
+                           else{
+                            mode = "black";
+                            randomise.classList.toggle("clicked");}};

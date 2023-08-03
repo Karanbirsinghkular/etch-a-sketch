@@ -1,8 +1,8 @@
 body{
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
-    background-color: white;
+    background-color: rgb(243, 237, 237);
 }
 
 .container{
@@ -11,6 +11,7 @@ body{
     height: 480px;
     width: 480px;
     margin-top: 80px;
+    margin-left: 90px;
 }
 
 .box{
@@ -25,4 +26,20 @@ body{
 
 .hoveredOver{
     box-shadow: 3px 3px 10px black;
+}
+
+.buttons{
+    margin-left: 200px;
+    margin-right: 100px;
+}
+
+.randomise{
+    height: 40px;
+    width: 100px;
+    background-color: white;
+}
+
+.clicked{
+    background-color: black;
+    color: white;
 }
